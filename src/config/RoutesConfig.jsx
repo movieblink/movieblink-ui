@@ -1,26 +1,26 @@
-import React from 'react'
-import { Route, Routes} from 'react-router-dom';
-import { Catalog } from '../pages/Catalog';
-import { Detail } from '../pages/Detail';
-import { Home } from '../pages/Home';
+import React from "react"
+import { Route, Routes} from "react-router-dom";
+import { Catalog } from "../pages/Catalog";
+import { Detail } from "../pages/Detail";
+import { Home } from "../pages/Home";
 
 const RoutesConfig = () => {
   return (
     <Routes>
         <Route 
-            path='/:category/search/:keyword'
+            path="/:category/search/:keyword"
             element={<Catalog/>}
         />
         <Route 
-            path='/:category/:id'
+            path="/:category/:id"
             element={<Detail/>}
         />
         <Route 
-            path='/:category'
+            path="/:category"
             element={<Catalog/>}
         />
         <Route 
-            path='/'
+            path="/"
             element={<Home/>}
         />
     </Routes>
