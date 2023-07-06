@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import "./modal.scss"
 
-export const Modal = props => {
+const Modal = props => {
 
   const [active, setActive] = useState(false);
 
@@ -12,7 +12,7 @@ export const Modal = props => {
   }, [props.active]);
 
   return (
-    <div id={props.active} className={`modal ${active ? "active" : ""}`}>
+    <div id={props.id} className={`modal ${active ? "active" : ""}`}>
         {props.children}
     </div>
   )
@@ -43,3 +43,5 @@ export const ModalContent = props => {
 ModalContent.propTypes = {
     onClose: PropTypes.func
 }
+
+export default Modal;
