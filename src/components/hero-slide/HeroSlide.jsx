@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react'
+// import apiConfig from '../../api/apiConfig';
+import tmdbApi from '../../api/tmdbApi';
 
 const HeroSlide = () => {
 
     const [movieItems, setMovieItems] = useState([]);
+    console.log(movieItems)
 
     const getData = () => {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=d072fa544eae40d6672bf090dd472577&language=en-US`)
+        // fetch(apiConfig.getMovieLis)
+        const url= tmdbApi.getMoviesList('popular', {})
+        fetch(url)
         .then(res => res.json())
         .then(data => setMovieItems(data.results));
     }
